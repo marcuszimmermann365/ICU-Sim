@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lcu-sim"
+version = "0.3.0"
+description = "LCU (Loveful Conscious Unity) Simulation — Exact (QuTiP) + Mean-Field with Yoga and Phys coupling"
+authors = [{name="Your Name"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24","scipy>=1.11","matplotlib>=3.8","pytest>=7.4"]
+[project.optional-dependencies]
+exact = ["qutip>=5.0"]
+[project.scripts]
+lcu-sim = "lcu.cli:main"
+lcu-app = "lcu_app.app_cli:main"
+lcu-opt = "lcu_app.opt_cli:main"
+lcu-env-sweep = "lcu_app.env_sweep_cli:main"
